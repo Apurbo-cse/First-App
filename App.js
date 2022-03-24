@@ -12,7 +12,7 @@ import {
 
 export default function App() {
   const [name, setName] = useState('Apurbo Roy');
-  const [people, setpeople] = useState([
+  const [people, setPeople] = useState([
     {name: 'Apurbo', id: '1'},
     {name: 'Anup', id: '2'},
     {name: 'Akash', id: '3'},
@@ -27,6 +27,9 @@ export default function App() {
 
   const pressHander = id => {
     console.log(id);
+    setPeople(prevPeople => {
+      return prevPeople.filter(person => person.id != id);
+    });
   };
 
   return (
