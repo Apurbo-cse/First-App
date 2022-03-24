@@ -6,6 +6,7 @@ import {
   View,
   TextInput,
   TouchableOpacity,
+  Image,
 } from 'react-native';
 import {FormItem} from 'react-native-form-component';
 
@@ -14,14 +15,19 @@ const FormComponent = () => {
   const [password, setPassword] = useState('');
   return (
     <View style={styles.container}>
+        <Image
+          source={{
+            uri: 'https://reactnative.dev/docs/assets/p_cat2.png',
+          }}
+          style={{ width: 200, height: 200 }}
+        />
       <TextInput
         style={styles.TextInput}
         placeholder="Email."
         placeholderTextColor="#003f5c"
         onChangeText={email => setEmail(email)}
       />
-      <TextInput
-        style={styles.TextInput}
+      <TextInput style={styles.TextInput}
         secureTextEntry={true}
         placeholder="Password."
         placeholderTextColor="#003f5c"
@@ -42,7 +48,7 @@ export default FormComponent;
 
 const styles = StyleSheet.create({
   container: {
-      marginTop:300,
+      marginTop:150,
       alignItems: 'center',
       justifyContent: 'center',
   },
@@ -68,7 +74,6 @@ const styles = StyleSheet.create({
 
   forgot_button: {
     margin: 5,
-    padding: 10,
   },
   loginBtn: {
     padding: 10,
@@ -76,7 +81,11 @@ const styles = StyleSheet.create({
     width: 250,
     borderRadius: 5,
     color: '#fff',
-    textAlign: 'center',
+   
     backgroundColor: 'green',
   },
+  loginText:{
+    textAlign: 'center',
+    color:'#fff',
+  }
 });
