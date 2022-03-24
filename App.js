@@ -7,6 +7,7 @@ import {
   TextInput,
   // ScrollView,
   FlatList,
+  TouchableOpacity,
 } from 'react-native';
 
 export default function App() {
@@ -23,6 +24,10 @@ export default function App() {
     {name: 'Amit', id: '9'},
     {name: 'Ajoy', id: '10'},
   ]);
+
+  const pressHander = id => {
+    console.log(id);
+  };
 
   return (
     <View style={styles.container}>
@@ -45,9 +50,9 @@ export default function App() {
         data={people}
         renderItem={({item}) => {
           return (
-            <View id={item.id}>
+            <TouchableOpacity onPress={() => pressHander(item.id)}>
               <Text style={styles.item}> {item.name}</Text>
-            </View>
+            </TouchableOpacity>
           );
         }}
       />
@@ -112,5 +117,6 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: 'pink',
     fontSize: 24,
+    marginHorizontal: 10,
   },
 });
