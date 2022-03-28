@@ -16,7 +16,7 @@ return (
         </View>
 
         <View style={{marginLeft: 12}}>
-            <Text style={styles.TitleText } >Cat</Text>
+            <Text style={styles.TitleText } >Cad</Text>
 
             <View style={styles.Test}>
                 <Text  style={{ color: 'gray', fontSize: 12, }} >Test</Text>

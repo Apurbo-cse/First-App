@@ -22,6 +22,7 @@ export default function FlatLists() {
       return prevPeople.filter(person => person.id != id);
     });
   };
+
   return (
     <View>
       <Text style={styles.boldtext}>My name is {name}</Text>
