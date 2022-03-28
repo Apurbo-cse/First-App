@@ -1,79 +1,127 @@
 /* eslint-disable prettier/prettier */
-import { StyleSheet, Text, View,Image } from 'react-native'
-import React from 'react'
+import { Text, View, Image, FlatList, TouchableOpacity } from 'react-native';
+import imagePath from '../Asset/Constant/ImgPath';
+import React from 'react';
+import styles from './styles';
+
+const DATA = [
+{
+key: '1',
+name: 'Shakib Al Hasan',
+content: 'Coming Live at 9pm See you there 🏏',
+imgCardIcon: imagePath.cardProfileIcon,
+imgCardContent: imagePath.cardCover,
+},
+{
+key: '2',
+name: 'Ayman Sadique',
+content: 'Hello every one how are you all! 😃',
+imgCardIcon: imagePath.cardProfileIcon2,
+imgCardContent: imagePath.cardCover2,
+},
+{
+key: '3',
+name: 'Shakib Al Hasan',
+content: 'Coming Live at 9pm See you there 🏏',
+imgCardIcon: imagePath.cardProfileIcon,
+imgCardContent: imagePath.cardCover,
+},
+{
+key: '4',
+name: 'Ayman Sadique',
+content: 'Hello every one how are you all! 😃',
+imgCardIcon: imagePath.cardProfileIcon2,
+imgCardContent: imagePath.cardCover2,
+},
+{
+key: '5',
+name: 'Ayman Sadique',
+content: 'Hello every one how are you all! 😃',
+imgCardIcon: imagePath.cardProfileIcon2,
+imgCardContent: imagePath.cardCover2,
+},
+{
+key: '6',
+name: 'Shakib Al Hasan',
+content: 'Coming Live at 9pm See you there ! 🏏',
+imgCardIcon: imagePath.cardProfileIcon,
+imgCardContent: imagePath.cardCover,
+},
+{
+key: '7',
+name: 'Ayman Sadique',
+content: 'Hello every one how are you all! 😃',
+imgCardIcon: imagePath.cardProfileIcon2,
+imgCardContent: imagePath.cardCover2,
+},
+];
 
 export default function Shakib() {
-  return (
-   <>
-   <View  style={styles.mainCardView}>
-   <View style={styles.container}>
-      <Text style={styles.paragraph}>
-        Local files and assets can be imported by dragging and dropping them into the editor
-      </Text>
-      <Image style={styles.logo} source={require('./Shakib.jpg')} />
+return (
+<>
+    <View style={styles.container}>
+        <View style={{ paddingBottom: 10 }}>
+            <FlatList data={DATA} renderItem={({ item })=> {
+                return (
+                <View style={styles.CardRow}>
+
+                    <View style={styles.MainCard}>
+                        <TouchableOpacity style={styles.cardImg}>
+                            <Image style={styles.starCardImg} source={item.imgCardIcon} />
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <Text style={styles.cardText}>{item.name}</Text>
+                            <Text style={styles.time}>5.31pm 2nd july</Text>
+                        </TouchableOpacity>
+                    </View>
+
+                    <View style={styles.CardContent}>
+                        <Text style={styles.cardContentText}>{item.content}</Text>
+                        <View>
+                            <Image style={styles.cardCoverImg} source={item.imgCardContent} />
+                        </View>
+                        <View style={styles.cardInfo}>
+                            <View>
+                                <Text style={styles.infoText}>
+                                    {/*
+                                    <FontAwesome5 name={'heart'} /> */}
+                                    ❤️ 100k
+                                </Text>
+                            </View>
+
+                            <View style={{ flexDirection: 'row' }}>
+                                <View>
+                                    <Text style={styles.infoText}>16 Comments</Text>
+                                </View>
+                                <View>
+                                    <Text style={styles.infoText}>106 Share</Text>
+                                </View>
+                            </View>
+                        </View>
+                        <View style={{ borderBottomColor: 'black', borderBottomWidth: 0.7, margin: 10, }}>
+                       
+                         
+
+                    </View>
+                    <View style={styles.cardButtons}>
+                            <TouchableOpacity style={styles.likeBtn}>
+                                <Text style={styles.btnText}>❤️ Like</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.likeBtn}>
+                                <Text style={styles.btnText}>💌 Comment</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.likeBtn}>
+                                <Text style={styles.btnText}>❤️ Share</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+
+                </View>
+                );
+                }}
+                />
+        </View>
     </View>
-   </View>
-   <View  style={styles.mainCardView}>
-   <View style={styles.container}>
-      <Text style={styles.paragraph}>
-        Local files and assets can be imported by dragging and dropping them into the editor
-      </Text>
-      <Image style={styles.logo} source={require('./Shakib.jpg')} />
-    </View>
-   </View>
-   <View  style={styles.mainCardView}>
-   <View style={styles.container}>
-      <Text style={styles.paragraph}>
-        Local files and assets can be imported by dragging and dropping them into the editor
-      </Text>
-      <Image style={styles.logo} source={require('./Shakib.jpg')} />
-    </View>
-   </View>
-  </>
-  )
+</>
+);
 }
-
-const styles = StyleSheet.create({
-
-    mainCardView: {
-        height: 300,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'white',
-        borderRadius: 5,
-        shadowColor: 'black',
-        shadowOffset: {width: 0, height: 0},
-        shadowOpacity: 1,
-        shadowRadius: 3,
-        elevation: 8,
-        flexDirection: 'row',
-        // eslint-disable-next-line no-dupe-keys
-        justifyContent: 'space-between',
-        paddingLeft: 0,
-        paddingRight: 0,
-        marginTop: 6,
-        marginBottom: 10,
-        marginLeft: 8,
-        marginRight: 8,
-        },
-
-    container: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingLeft: 10,
-        paddingRight: 10,
-      },
-      paragraph: {
-        paddingLeft: 1,
-        paddingRight: 1,
-        marginBottom:10,
-        marginTop: 0,
-        fontSize: 14,
-        // fontWeight: 'bold',
-        // textAlign: 'center',
-      },
-      logo: {
-        height: 180,
-        width: 350,
-      }
-})

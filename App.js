@@ -7,30 +7,8 @@ import Shakib from './App/Shakib/Shakib'
 
 const App = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.paragraph}></Text>
-
-      {/* <Card> */}
       <View><Shakib/></View>
-      {/* </Card> */}
-    </View>
   )
 }
 
 export default App
-
-const styles = StyleSheet.create({
- 
-  container: {
-    flex: 1,
-    // justifyContent: 'center',
-    // paddingTop: statusBarHeight,
-    backgroundColor: '#ecf0f1',
-  },
-  paragraph: {
-    margin: 10,
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-});
